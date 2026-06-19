@@ -1,0 +1,901 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/*Define a imagem de fundo e centraliza o menu */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./assets/imag_fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+.campo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 12px;
+  gap: 0.5rem;
+}
+
+.campo-container label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.senhaShow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.senhaShow input{
+  padding-right: 45px;
+}
+.senhaShow button{
+  position: absolute;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.senhaShow button:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
+
+.logo{ width: 30vw;}
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+
+/* Telas de cadastro */
+.card_cadastro {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  padding: 35px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.2);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card_cadastro > h2 {
+  text-align: center;
+  flex-shrink: 0; 
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.formulario-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  color: #000000;
+  outline: none;
+}
+
+.input:focus {
+  background-color:  rgba(255, 255, 255, 0.7);
+}
+
+
+/* Area de busca */
+.busca-input {
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding-left: 18px;
+  flex-shrink: 0;
+}
+
+.grid-campos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.grid-campos-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Botoes das Telas */
+
+.botoes-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0; 
+}
+
+.botao, .cancelar {
+  color: white;
+  padding: 11px 22px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.botao { background: #000000; }
+.cancelar { background: #555555; }
+.botao:hover, .cancelar:hover { background: #302e2e; }
+
+.tableFunc{
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+/* botoes de editar e excluir das telas */
+.btn-acao-editar, .btn-acao-excluir {
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  text-align: center;
+  width: 32px; 
+  height: 40px;
+  cursor: pointer;
+  border: none !important;
+  background: transparent !important;
+  transition: transform 0.2s ease !important;
+}
+
+.btn-acao-editar > img, .btn-acao-excluir > img { 
+  height: 25px;
+}
+
+.btn-acao-editar:hover, .btn-acao-excluir:hover {
+  transform: scale(1.08);
+  
+}
+
+.link-recuperar {
+  display: block;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.bot_rec {display: flex;  gap: 5vw; justify-content: space-between;}
+.bot_rec > .botao, .bot_rec > .cancelar{
+  height: 5vh;
+  width: 40vw; 
+  padding: 0.5rem;
+  font-size: 13px;
+  margin-top: 0px !important;
+}
+
+
+/* Menu principal/Dashboard e o botão de sair  */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 35px;
+  border-radius: 12px;
+  width: 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: none;
+}
+
+.menu-topo-container {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
+  gap: 1rem;
+}
+
+.btn-logout {
+  display: flex;
+  flex-direction: column;
+  color: rgb(224, 16, 16);
+  font-size: 10px;
+  text-align: center;
+  width: 32px; 
+  height: 50px;
+  cursor: pointer;
+  border: none !important;
+  background: transparent !important;
+  transition: transform 0.2s;
+}
+
+.btn-logout:hover {
+  transform: scale(1.1);
+}
+
+.btn-logout > img{
+  width: 32px; 
+  height: 32px;
+}
+
+.badge-nivel {
+  background-color: #000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.btn-menu-opcao {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000000;
+}
+
+.btn-menu-opcao:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+/* Telas de Consulta */
+.tabela-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.tabela th, .tabela td {
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.tabela th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.tabela tr { border-bottom: 10px solid rgba(0, 0, 0, 0.2);}
+
+.lista-compromissos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-compromisso-reestruturado {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.item-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.horario-label {
+  font-size: 13px;
+  color: #000000;
+  background: rgb(255, 255, 255);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.item-botoes { display: flex; gap: 8px; }
+
+.status-ponto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-ponto-agendado { background-color: #007bff; }
+.status-ponto-concluido { background-color: #28a745; }
+.status-ponto-cancelado { background-color: #dc3545; }
+
+.dropdown-wrapper { position: relative; }
+.dropdown-lista {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 160px;
+  overflow-y: auto;
+  z-index: 10;
+}
+.dropdown-item { padding: 10px 14px; cursor: pointer; font-size: 13px; background-color: #ffffff;}
+.dropdown-item:hover { background-color: #000000; color: #ffffff; }
+
+
+/* Tela Agenda */
+.filtros-agenda-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-erro {
+  border: 2px solid #dc3545 !important; 
+  background-color: #fff8f8 !important; 
+}
+
+.erro-texto {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.card_cadastro *::-webkit-scrollbar,
+.formulario-scroll::-webkit-scrollbar,
+.tabela-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.card_cadastro *::-webkit-scrollbar-thumb,
+.formulario-scroll::-webkit-scrollbar-thumb,
+.tabela-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.agenda-container-largo {
+  max-width: 1050px !important;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.agenda-header h2 {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.filtros-agenda-nova {
+  display: flex;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 12px 25px;
+  border-radius: 50px;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.filtro-item label {
+  font-size: 11px !important;
+  color: #444;
+  font-weight: bold;
+}
+
+.filtro-item select, 
+.filtro-item input[type="date"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 13px;
+  padding: 3px 0;
+  outline: none;
+  color: #000;
+}
+
+.busca-wrapper {
+  flex: 1;
+  background: #ffffff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+}
+
+.input-limpo {
+  border: none !important;
+  background: transparent !important;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.scroll-agenda {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.lista-cards-agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-compromisso-horizontal {
+  display: grid;
+  grid-template-columns: 130px 1fr 120px 130px 150px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  border-radius: 12px;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.info-icon-texto {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.icone-agenda-mini {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.comp-col-principal h4 {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.local-texto {
+  font-weight: normal;
+  font-size: 12px;
+  color: #555;
+}
+
+.label-fixo {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.valor-texto {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+.badge-status-novo {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid;
+  width: 100px;
+}
+
+
+.status-agendado {
+  background-color: #e8f4fd !important;
+  border-color: #007bff !important;
+  color: #007bff !important;
+}
+
+.status-concluido {
+  background-color: #eafaf1 !important;
+  border-color: #2da44e !important;
+  color: #2da44e !important;
+}
+
+.status-cancelado {
+  background-color: #fdf2f2 !important;
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+.comp-col-acoes {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-acao-novo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 6px;
+  border-radius: 8px;
+  width: 58px;
+  height: 52px;
+  transition: background 0.2s;
+}
+
+.btn-acao-novo:hover {
+  background: #f5f5f5;
+}
+
+.btn-acao-novo img {
+  height: 18px;
+  width: 18px;
+  margin-bottom: 2px;
+  object-fit: contain;
+}
+
+.btn-acao-novo span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.bloqueado-label {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+}
+
+.agenda-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.btn-voltar-novo {
+  background: #4a4a4a !important;
+  color: #ffffff !important;
+  padding: 10px 30px !important;
+  border-radius: 25px !important;
+  border: none !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  cursor: pointer;
+}
+
+.btn-adicionar-novo {
+  background: #000000 !important;
+  color: #ffffff !important;
+  padding: 10px 35px !important;
+  border-radius: 25px !important;
+  border: none !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  cursor: pointer;
+}
+
+.btn-voltar-novo:hover, .btn-adicionar-novo:hover {
+  opacity: 0.9;
+}
+
+.btn-gatilho-filtros {
+  display: none;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-fechar-filtros,
+.btn-aplicar-filtros {
+  display: none;
+}
+.icones{
+    height: 20px;
+}
+
+/* Responsividade das telas */
+
+@media (min-width: 1025px) {
+  .logo{ width: 15vw;}
+}
+
+@media (max-width: 1024px) {
+  .logo{ width: 20vw;}
+  
+}
+
+@media (max-width: 826px) {
+  .card-compromisso-horizontal {
+    grid-template-columns: 120px 200px 90px 90px 150px;
+    width: min-content;
+  }
+  .card_cadastro  {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .tabela td {
+    font-size: 1.30VW;
+  }
+  .logo{ width: 25vw;}
+  
+}
+@media (max-width: 714px) {
+  .tabela td {
+    font-size: 1.65VW;
+  }
+  .card-compromisso-horizontal {
+    grid-template-columns: 120px 180px 90px 90px 150px;
+    width: min-content;
+  }
+
+  .agenda-container-largo {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px !important;
+  }
+  .agenda-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+    height: 40px !important;
+  }
+  .agenda-header h2 {
+    margin: 0 !important;
+    font-size: 22px !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1 !important;
+  }
+  .btn-gatilho-filtros {
+    display: block !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    right: 0 !important;
+    z-index: 2 !important;
+  }
+  .btn-gatilho-filtros span {
+    display: inline-block;
+    line-height: 1; 
+  }
+  .btn-gatilho-filtros .icones {
+    width: 16px; 
+    height: 16px;
+    object-fit: contain;
+  }
+  .filtros-agenda-nova {
+    display: none !important;
+    position: absolute !important; 
+    top: 60px !important; 
+    left: 15px !important;
+    right: 15px !important;
+    width: calc(100% - 30px) !important; 
+    background: rgba(255, 255, 255, 1) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 999 !important; 
+    margin: 0 !important;
+  }
+  .filtros-agenda-nova.aberto {
+    display: flex !important; 
+  }
+  .btn-fechar-filtros {
+    display: block !important;
+    align-self: flex-end !important;
+    background: #4a4a4a !important;
+    color: #ffffff !important;
+    border: none !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+  }
+  .btn-aplicar-filtros {
+    display: block !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    margin-top: 5px !important;
+    cursor: pointer !important;
+  }
+  .filtros-agenda-nova .filtro-item {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+  .filtros-agenda-nova .filtro-item label {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    text-align: left !important;
+  }
+  .filtros-agenda-nova .filtro-item select,
+  .filtros-agenda-nova .filtro-item input {
+    width: 100% !important;
+    height: 40px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 5px 10px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .busca-wrapper {
+    background: #ffffff !important;
+    border: 1px solid #ddd !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+  }
+  .busca-wrapper input {
+    border: none !important;
+  }
+  .scroll-agenda {
+    display: block !important;
+    max-height: 380px !important; 
+    width: 100% !important;
+    overflow-y: auto !important;   
+    overflow-x: auto !important;   
+    padding-bottom: 15px !important; 
+  }
+  .lista-cards-agenda {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: max-content !important; 
+    min-width: 100% !important;
+  }
+  .card-compromisso-horizontal {
+    display: grid !important; 
+    grid-template-columns: 110px 180px 100px 110px 140px !important; 
+    width: auto !important;
+    white-space: nowrap !important; 
+    gap: 15px !important;
+    padding: 12px 15px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 10px !important;
+  }
+  
+}
+
+
+
+@media (max-width: 480px) {
+  .tabela td {
+    font-size: 3VW;
+  }
+  .logo{ width: 40vw;}
+  .botao, .cancelar {
+    font-size: 0.6rem;
+  }
+  .icones{
+    height: 20px;
+  }
+}
