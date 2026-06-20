@@ -1,15 +1,15 @@
 # Instruções de Instalação 
 
-## INSTALANDO DEPENDENCIAS NODE
+## INSTALA DEPENDENCIAS NODE
 npm install
 
-## INSTALANDO REACT HOOK FORM
+## INSTALA REACT HOOK FORM
 npm install react-hook-form
 
-## INSTALANDO MATERIAL UI
+## INSTALAMATERIAL UI
 npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
 
-## CRIANDO BANCO E TABELAS
+## CRIA BANCO E TABELAS
 python src/Database/gerar_dados.py
 
 ## Obs: 
