@@ -6,7 +6,7 @@ npm install
 ## INSTALA REACT HOOK FORM
 npm install react-hook-form
 
-## INSTALAMATERIAL UI
+## INSTALA MATERIAL UI
 npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
 
 ## CRIA BANCO E TABELAS
